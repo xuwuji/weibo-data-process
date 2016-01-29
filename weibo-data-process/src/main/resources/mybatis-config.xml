@@ -21,6 +21,7 @@
 
 	<mappers>
 		<mapper class='com.xuwuji.weibo.dao.TweetMapper' />
+		<mapper class='com.xuwuji.weibo.dao.UserMapper' />
 	</mappers>
 
 </configuration>

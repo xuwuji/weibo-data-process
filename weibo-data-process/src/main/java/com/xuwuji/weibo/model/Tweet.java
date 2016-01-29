@@ -2,19 +2,21 @@ package com.xuwuji.weibo.model;
 
 public class Tweet {
 	private String id;
-	private String name;
+	private String tweetId;
 	private String text;
 	private String time;
 	private int repostCount;
 	private int commentCount;
+	private int userId;
 
 	private Tweet(Builder builder) {
 		id = builder.id;
-		name = builder.name;
+		tweetId = builder.tweetId;
 		text = builder.text;
 		time = builder.time;
 		repostCount = builder.repostCount;
 		commentCount = builder.commentCount;
+		userId = builder.userId;
 
 	}
 
@@ -28,19 +30,20 @@ public class Tweet {
 		}
 
 		private String id;
-		private String name;
+		private String tweetId;
 		private String text;
 		private String time;
 		private int repostCount;
 		private int commentCount;
+		private int userId;
 
 		public Builder id(String id) {
 			this.id = id;
 			return this;
 		}
 
-		public Builder name(String name) {
-			this.name = name;
+		public Builder tweetId(String tweetId) {
+			this.tweetId = tweetId;
 			return this;
 		}
 
@@ -64,6 +67,11 @@ public class Tweet {
 			return this;
 		}
 
+		public Builder userId(int userId) {
+			this.userId = userId;
+			return this;
+		}
+
 		public Tweet build() {
 			return new Tweet(this);
 		}
@@ -74,8 +82,8 @@ public class Tweet {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTweetId() {
+		return tweetId;
 	}
 
 	public String getText() {
@@ -94,10 +102,14 @@ public class Tweet {
 		return commentCount;
 	}
 
+	public int getUserId() {
+		return userId;
+	}
+
 	@Override
 	public String toString() {
-		return "Tweet [id=" + id + ", name=" + name + ", text=" + text + ", time=" + time + ", repostCount="
-				+ repostCount + ", commentCount=" + commentCount + "]";
+		return "Tweet [id=" + id + ", tweetId=" + tweetId + ", text=" + text + ", time=" + time + ", repostCount="
+				+ repostCount + ", commentCount=" + commentCount + ", userId=" + userId + "]";
 	}
 
 }
